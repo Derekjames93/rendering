@@ -1,9 +1,23 @@
 
 function renderPokerHand(pokerHand) {
     // HINT: You can use <img /> tags that point to the card images in the /cards folder
+    let aString = ''
+    for (let count = 0; count < pokerHand.length; count++) {
+        const newHand = pokerHand[count];
+
+        aString += `
+            <div> 
+                <img src="./cards/${newHand.value}${newHand.suit}.png" >
+            </div>`
+    }
+
+
+
+
+
     return `
-        <div class="text-center mt-5">
-            <code>${JSON.stringify(pokerHand)}</code>
+        <div class="text-center mt-5; d-flex flex-row">
+            ${aString}
         </div>
     `
 }
@@ -17,8 +31,8 @@ function pokerHand() {
             suit: "C"
         },
         {
-            value: "K",
-            suit: "D"
+            value: "Q",
+            suit: "S"
         },
         {
             value: "9",
